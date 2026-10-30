@@ -1,0 +1,738 @@
+ Master Prompt Build WhatsInit — AI-Powered Food Intelligence & Personalized Nutrition Platform
+
+Act as a senior full-stack developer, AI engineer, UIUX designer, and product architect. Build a complete, responsive, modern web application called WhatsInit.
+
+WhatsInit helps people understand what is inside their packaged food, evaluate food product claims using available evidence, discover healthier and affordable alternatives, generate personalized recipes, and connect with qualified dietitians.
+
+The application must feel like a real, usable startup product—not a static landing page or a basic AI chatbot.
+
+## 1. Brand Identity and Design System
+
+App name WhatsInit
+
+Tagline Before You Eat It, Know What's In It.
+
+Create a minimalistic, premium, clean, trustworthy, health-focused design.
+
+### Color palette
+
+- Primary Forest green `#245C45`
+- Secondary Soft sage `#DCE9DF`
+- Background Warm off-white `#FAFAF6`
+- Cards Pure white `#FFFFFF`
+- Text Dark charcoal `#242A26`
+- Secondary text Muted gray `#707770`
+- Warning Soft amber
+- Error Muted red
+
+Use generous whitespace, rounded cards, subtle borders, minimal shadows, clean typography, and simple line icons.
+
+Avoid excessive gradients, neon colors, unnecessary animations, emojis everywhere, and cluttered dashboards.
+
+Use a professional font such as Inter.
+
+The interface should be responsive across desktop, tablets, and mobile devices.
+
+## 2. Website Pages and Navigation
+
+Create the following pages
+
+1. Landing page
+2. Separate User Sign up  Login and Dietitian Sign up  Login
+3. User onboarding
+4. Dietitian onboarding
+4. Food Scanner
+5. Food Analysis Results
+6. Product Comparison
+7. Healthy Alternatives
+8. AI Recipe Generator
+9. Personalized Meal Planner
+10. FSSAI and Certification Verification
+11. Dietitian Marketplace
+12. Premium Subscription
+13. User Dashboard
+14. Profile and Dietary Preferences
+15. Scan and Meal History
+
+Use a clean navigation bar with the WhatsInit logo, Home, Scan Food, Recipes, Find a Dietitian, and Premium. Include a clear For Dietitians entry point. When logged in, show navigation appropriate to the account role consumer tools for users and professionalbooking tools for dietitians.
+
+Include a clear primary CTA Scan Your Food.
+
+## 3. Landing Page
+
+Create a visually attractive homepage with the headline
+
+What's Really Inside Your Food
+
+Subheading
+
+Scan packaged food, understand its nutrition in simple language, compare healthier alternatives, and get personalized meal guidance—all in one place.
+
+Primary CTA Scan Your Food
+
+Secondary CTA Explore Healthy Recipes
+
+Include
+
+- A realistic packaged-food scanning illustration.
+- A preview of the food analysis dashboard.
+- A section explaining how WhatsInit works.
+- Features for food scanning, claim verification, healthy alternatives, recipe generation, and dietitian consultations.
+- A section for consumers and beginner dietitians.
+- A Premium subscription preview.
+- Testimonials clearly marked as sample content until genuine testimonials exist.
+- FAQ and footer.
+
+## 4. Smart Food Scanner — Core Feature
+
+This is the most important feature of WhatsInit.
+
+Allow users to scan packaged food using their device camera or upload an existing product image.
+
+Provide two options
+
+- Open Camera
+- Upload Food Label
+
+On mobile, request camera permission only when the user initiates scanning. On desktop, show a file upload option if camera access is unavailable.
+
+Guide users to capture
+
+- Front of the package
+- Ingredients list
+- Nutrition facts table
+- FSSAI licence number
+- Certification marks, where present
+
+Use OCR to extract
+
+- Product name
+- Brand
+- Ingredients
+- Serving size
+- Energycalories
+- Total fat
+- Saturated fat
+- Trans fat, when declared
+- Carbohydrates
+- Total sugar
+- Added sugar, when declared
+- Protein
+- Sodium
+- Allergen declarations
+- FSSAI licence number
+- Product claims
+
+Allow users to review and correct OCR results before analysis.
+
+If information is missing or unreadable, ask the user to upload another image instead of inventing values.
+
+### AI food analysis
+
+Generate a structured report in simple, everyday English.
+
+Divide the result into the following sections
+
+A. Nutrition Snapshot
+
+- Calories per serving
+- Total fat
+- Saturated fat
+- Sugar
+- Sodium
+- Protein
+- Serving size
+
+Display clear units such as g, mg, kcal, and serving quantity. Make the nutrition information understandable to someone with no nutrition background.
+
+### Explain nutrition in everyday language
+For each important nutrient, display
+- What it is a short, plain-language definition.
+- What the label says the exact value and unit from the package.
+- What it means a balanced explanation without alarmist language.
+- What I can do a practical next step, such as comparing products or checking portion size.
+
+Use these examples as explanation patterns, not as fixed product results
+- Sugar “This serving contains 10 g of sugar, which is about 2.5 level teaspoons (using approximately 4 g per teaspoon).” Make clear whether the label reports total sugar or added sugar. Do not imply that all sugar shown is added sugar unless the label says so. Explain that regularly consuming too much added sugar can contribute to tooth decay and excess calorie intake.
+- Sodium “Sodium is part of salt. Your body needs some, but too much sodium over time can raise blood pressure.” Show the sodium value in mg and explain it in simple words. Do not confuse sodium with salt sodium and salt are not the same weight. If showing an estimated salt equivalent, calculate it correctly and label it as an estimate.
+- Fat Explain that fat provides energy and helps the body absorb some vitamins; the type and amount matter. Discuss saturated and trans fat separately when label data is available.
+- Protein Explain that protein helps build and repair body tissues; whether the amount is useful depends on the serving and the person's overall diet.
+- Calories Explain that calories measure energy from food and individual needs vary.
+
+Do not use a teaspoon conversion for sodium. Use teaspoons only as an approximate visual comparison for sugar, and state the conversion assumption.
+
+B. What's Good About This Food
+Explain potentially beneficial nutrients and ingredients without exaggerating their benefits.
+
+C. What Should You Be Careful About
+Identify high sugar, sodium, saturated fat, allergens, or other relevant concerns based on the actual label data and appropriate reference criteria.
+
+Explain the concern in simple language.
+
+Example
+This serving contains 12 g of sugar. Check whether the declared value includes added sugar and consider how it fits into your overall diet.
+
+Do not label a product unhealthy solely because one nutrient is present.
+
+D. Personalized Food Insights
+Use the user's voluntarily provided age, preferences, dietary goals, and relevant health information to explain what may be important for them.
+
+For example
+
+- For a user managing diabetes, explain carbohydrate and sugar information carefully.
+- For a user with high blood pressure, highlight sodium information.
+- For a fitness enthusiast, explain protein content.
+- For a budget-conscious student, focus on value and affordable alternatives.
+
+Do not diagnose medical conditions or prescribe treatment.
+
+E. Portion Guidance
+Suggest a reasonable portion based on available serving information, general nutrition guidance, and user preferences.
+
+Show
+
+- Suggested portion
+- Calories and nutrients for that portion
+- How it compares with the labelled serving size
+
+Clearly distinguish general guidance from individualized medical advice.
+
+Do not claim that one exact portion is medically appropriate for everyone.
+
+F. Simple Final Summary
+Display
+
+- What to know
+- What to watch
+- Whether a more suitable alternative may be available
+
+Avoid simplistic or unsupported 100% healthy and 100% unhealthy verdicts.
+
+## 5. Product Claim Verification Engine
+
+Build a dedicated module that evaluates food packaging claims.
+
+Examples
+
+- High Protein
+- No Added Sugar
+- Low Fat
+- 100% Whole Wheat
+- Organic
+- No Preservatives
+
+Extract claims using OCR and compare them with
+
+1. The available ingredients list
+2. The declared nutrition facts
+3. Applicable FSSAI requirements
+4. Verified certification records
+5. Available official documentation or laboratory reports, where relevant
+
+Display one of three clear statuses
+
+- Supported by Available Evidence
+- Potential Mismatch Detected
+- Insufficient Evidence
+
+For each result, show
+
+- Claim being evaluated
+- Evidence reviewed
+- Applicable rule or criterion
+- Reason for the result
+- Information still required
+- Source and last verification date, when available
+
+Never automatically declare a product fraudulent merely because information is incomplete.
+
+Do not treat an AI model's opinion as proof.
+
+## 6. FSSAI Licence and Certification Verification
+
+Create a dedicated product verification section.
+
+Extract the 14-digit FSSAI licence number from the package using OCR.
+
+Allow users to verify the licence through an official FSSAI FoSCoS verification facility or a legitimately available official API.
+
+Show
+
+- Licence number
+- Verification status
+- Available business or licence details
+- Licence validity, if available
+- Source of the verification
+- Last checked date
+
+Possible statuses
+
+- Record Found
+- Expired or Invalid, when confirmed by the official record
+- Not Found
+- Unable to Verify
+
+Important implementation requirements
+
+- Do not invent licence records.
+- Do not use random licence numbers as real examples.
+- Do not claim official verification unless the official source was actually checked.
+- Do not assume a direct public API exists. Investigate API availability and access requirements first.
+- If no authorized API is available, provide a button that opens the official verification page and lets the user complete verification.
+- Do not bypass CAPTCHA, authentication, or website restrictions.
+- An FSSAI licence does not prove that every product claim is true or that every batch has passed independent laboratory testing.
+
+For organic and other certification marks, verify records against the appropriate official certification source whenever possible.
+
+If no reliable integration exists, show Verification Not Available and provide a link to the relevant official source.
+
+## 7. Healthy Alternatives and Product Comparison
+
+After analysing a product, show a section called
+
+Want a Better Alternative
+
+Example scenario
+
+A user scans a packet of Kurkure.
+
+WhatsInit could suggest alternatives such as
+
+- Roasted makhana
+- Roasted chana
+- Homemade popcorn
+- Other suitable packaged or homemade snacks
+
+Recommendations must depend on actual nutrition information, ingredients, price, availability, dietary requirements, and user preferences.
+
+Do not automatically assume every alternative is healthier. Compare the available evidence.
+
+For each alternative, display
+
+- Product or food name
+- Approximate price
+- Price per 100 g, when data is available
+- Calories per comparable serving
+- Sugar, sodium, and fat, when data is available
+- Protein and fibre, when available
+- Why it may be a suitable alternative
+- Important limitations
+
+Allow users to compare two or three products side by side.
+
+Include comparison charts for
+
+- Sugar
+- Sodium
+- Total fat
+- Calories
+- Protein
+- Price
+
+Use the same serving basis when comparing nutrients. If serving sizes differ, normalize values to a common basis and explain it.
+
+For homemade foods, use clearly labelled estimated ingredient-based values.
+
+Never fabricate prices, product ratings, or nutrition data. Clearly mark estimated or unavailable values.
+
+## 8. AI Recipe Generator
+
+Create an interactive recipe generator.
+
+Ask users for the following inputs
+
+- Age range
+- Dietary preference vegetarian, vegan, egg-based, or non-vegetarian
+- Food allergies and intolerances
+- Goal general wellness, weight management, muscle gain, or another goal
+- Budget per meal
+- Number of servings 1, 2, 3, 4, 5, or custom
+- Available ingredients
+- Preferred cuisine
+- Maximum cooking time
+- Meals required breakfast, lunch, dinner, or snack
+- Optional dietary requirements or health conditions, entered voluntarily
+
+Provide a clear privacy notice before collecting health-related information.
+
+Allow users to skip optional health information.
+
+### Generated recipe results
+
+For each recipe, show
+
+- Recipe name
+- Food image or suitable visual placeholder
+- Preparation time
+- Cooking time
+- Difficulty level
+- Number of servings
+- Ingredients with quantities
+- Step-by-step cooking instructions
+- Estimated cost
+- Estimated calories per serving
+- Estimated protein, carbohydrates, fat, and fibre
+- Suitable substitutions
+- Storage guidance, where appropriate
+
+Provide buttons
+
+- Generate Another Recipe
+- Adjust Servings
+- Reduce Cost
+- Save Recipe
+- Add Ingredients to Grocery List
+
+### Dynamic serving adjustment
+
+If the user changes the serving count from 2 to 5, recalculate ingredient quantities.
+
+Do not simply change the serving label while keeping the original ingredient quantities.
+
+Explain that nutrition and cost estimates may vary with ingredients, brands, and cooking methods.
+
+## 9. Automatic Grocery List
+
+For every generated meal plan, create a consolidated grocery list.
+
+Group ingredients into
+
+- Vegetables and fruits
+- Grains and cereals
+- Pulses and legumes
+- Dairy or alternatives
+- Protein sources
+- Spices and condiments
+- Other essentials
+
+Combine duplicate ingredients across recipes.
+
+For example, if three recipes require tomatoes, calculate the total amount needed.
+
+Allow users to
+
+- Tick purchased items
+- Edit quantities
+- Remove ingredients
+- View estimated total cost
+- Copy or print the list
+
+Keep the list aligned with the selected number of servings.
+
+## 10. Personalized Meal Planner
+
+Build a weekly meal-planning dashboard.
+
+Generate breakfast, lunch, dinner, and optional snacks according to
+
+- User preferences
+- Budget
+- Number of servings
+- Available ingredients
+- Cooking time
+- Dietary restrictions
+- Stated goals
+
+Allow users to replace meals, swap ingredients, regenerate individual recipes, and view an estimated weekly grocery cost.
+
+Health conditions such as diabetes or PCOS must be handled carefully. Provide general nutrition information and encourage users to consult a qualified dietitian for individualized medical dietary advice.
+
+Do not prescribe medication or promise disease treatment.
+
+## 11. Premium AI Dietitian Consultation
+
+Create a dedicated Premium page.
+
+Proposed price ₹99month for the initial consumer Premium tier.
+
+Do not imply that a subscription automatically includes unlimited human consultations unless that benefit is explicitly configured.
+
+### Premium benefits
+
+- Advanced food claim analysis
+- Personalized weekly meal plans
+- More detailed nutritional reports
+- Saved scan and recipe history
+- Personalized food alternatives
+- Meal and grocery planning tools
+- Access to the dietitian discovery and booking system
+
+### Human dietitian consultation
+
+Allow users to
+
+- Browse qualified dietitian profiles
+- Filter by expertise, language, consultation fee, and availability
+- View credentials and experience
+- Book an available consultation slot
+- Submit dietary preferences before the appointment
+- View booking status and consultation history
+
+Display consultation fees separately unless a specific subscription bundle includes them.
+
+Do not create fake dietitian credentials or claim appointments are confirmed before the booking is actually completed.
+
+### AI nutrition assistant
+
+Provide a clearly labelled AI assistant for general nutrition questions.
+
+The AI must not pretend to be a human or qualified dietitian. It should identify itself as AI and recommend professional support for medical dietary concerns.
+
+## 12. Beginner Dietitian Marketplace
+
+WhatsInit also supports newly qualified dietitians who struggle to find clients.
+
+Create a separate For Dietitians page.
+
+Features
+
+- Professional profile creation
+- Qualification and credential submission
+- Verification status
+- Areas of expertise
+- Languages spoken
+- Consultation pricing
+- Appointment availability
+- Client booking management
+- Meal-plan document uploads
+- Follow-up scheduling
+- Basic profile analytics
+
+Allow dietitians to start with a free basic profile.
+
+Any paid professional plan must have transparent pricing and clear benefits.
+
+Do not allow unverified users to be displayed as verified professionals.
+
+## 13. User Dashboard
+
+Create a personalized dashboard with
+
+- Welcome message
+- Quick Scan button
+- Recently scanned products
+- Recent food-claim verification results
+- Saved alternatives
+- Today's meal plan
+- Grocery list shortcut
+- Nutrition insights
+- Dietitian appointment reminders
+- Premium status
+
+Use compact cards and clear visual hierarchy.
+
+Avoid overwhelming users with too many metrics.
+
+## 14. Separate Authentication for Users and Dietitians
+
+Implement complete sign-up, login, logout, password reset, session handling, and profile management. The User and Dietitian experiences must be clearly separate from the first authentication screen onward. Do not use one generic registration form for both roles.
+
+### First authentication screen
+Show two clear options
+- Continue as User — for people scanning food, exploring recipes, planning meals, or finding a dietitian.
+- Continue as Dietitian — for qualified or newly qualified dietitians who want to create a professional profile and manage clients.
+
+Each option must open its own login and sign-up flow. Include a clear way to return to role selection or switch roles. Keep the existing WhatsInit design system and make the flows responsive on mobile and desktop.
+
+### User sign-up and onboarding
+Collect only the information needed to provide the service
+- Full name
+- Email address
+- Password
+- Optional age or age range
+- Dietary preferences
+- Allergies and intolerances
+- Food budget and preferred serving count
+- Optional goals such as general wellness or weight management
+- Optional health information, such as diabetes or high blood pressure, only with clear consent
+
+Allow users to skip optional health questions, edit preferences later, and delete their account. Health information must remain private and must never appear on a public profile.
+
+After successful user registration, direct the user to the User Dashboard and user onboarding flow. Users should see user features such as food scanning, nutrition reports, recipes, meal planning, grocery lists, scan history, and dietitian discovery.
+
+### Dietitian sign-up and onboarding
+Use a separate professional registration form with
+- Full name
+- Email address
+- Password
+- Qualification and institution
+- Specializations or areas of expertise
+- Years of experience, if any
+- Languages spoken
+- Consultation fee
+- Availability and preferred consultation format
+- Professional registration or credential details and supporting documents, where applicable
+- Short professional bio
+
+Do not invent or automatically approve qualifications. Store submitted credentials securely and show a clear status such as Pending Verification, Verified, or Additional Information Required. Display a verified badge only after the platform's actual verification process succeeds. Do not publicly expose private documents or sensitive personal information.
+
+After registration, direct dietitians to a Dietitian Dashboard where they can complete their profile, manage availability, review booking requests, manage client appointments, and upload meal-plan documents when the relevant feature is configured. Clearly distinguish a free basic profile from any paid professional plan.
+
+### Role-based access and security
+- Store each account's role securely as `user` or `dietitian`.
+- Enforce role permissions on the serverbackend as well as in the interface; hiding a page or button alone is not authorization.
+- Users must not be able to access dietitian-only dashboards or private client records.
+- Dietitians must not be able to access another dietitian's private records or a user's account without an authorized booking or appropriate consent.
+- Validate inputs, hash passwords with a secure standard, protect sessions, and implement safe password-reset flows.
+- Show useful validation errors and loadingsuccess states. Prevent duplicate registrations for the same email.
+- If a real backend or authentication provider is not configured, clearly label any demo authentication as demo-only; do not pretend that accounts are securely stored or authenticated in production.
+
+Do not make sensitive health information publicly visible. Provide account settings for editing profile information, changing a password, and requesting account deletion.
+
+## 15. Recommended Technical Architecture
+
+First inspect the existing project structure and preserve working code. If the repository is empty, create a suitable project from scratch.
+
+Recommended stack
+
+- Frontend Next.js with TypeScript
+- Styling Tailwind CSS
+- UI components accessible reusable component library
+- Backend Next.js API routes or a dedicated backend
+- Database PostgreSQL
+- Authentication secure session-based or token-based authentication
+- Image handling secure uploads with file validation
+- OCR a suitable OCR provider
+- AI a configurable AI provider through server-side API calls
+- Charts a suitable charting library
+- Payments a provider supporting Indian payments, integrated only when credentials are configured
+
+Use environment variables for secrets.
+
+Never expose API keys in frontend code.
+
+Create an `.env.example` containing placeholder names, not real credentials.
+
+### Core data models
+
+- User
+- UserPreferences
+- FoodProduct
+- FoodScan
+- NutritionAnalysis
+- ProductClaim
+- VerificationRecord
+- AlternativeProduct
+- Recipe
+- RecipeIngredient
+- GroceryList
+- DietitianProfile
+- ConsultationBooking
+- Subscription
+- ScanHistory
+
+Use database migrations and sensible relationships.
+
+## 16. AI and External Integrations
+
+Build clean service abstractions for
+
+- OCR
+- Food label parsing
+- Nutrition analysis
+- Product-claim evaluation
+- FSSAI verification
+- Certification verification
+- Product lookup
+- Recipe generation
+- Alternative recommendations
+- Dietitian discovery
+
+Do not pretend an external API is connected when it is not.
+
+If an API key is missing
+
+- Show a clear configuration message.
+- Provide a sample mode with visibly labelled demonstration data.
+- Keep the application navigable.
+- Never present mock verification results as real official verification.
+
+For claim verification, use structured rules and evidence sources. The AI should explain the findings rather than independently inventing regulatory rules.
+
+## 17. Security, Privacy, and Reliability
+
+Implement
+
+- Input validation
+- Upload file-type and size validation
+- Server-side API-key protection
+- Secure authentication
+- Authorization checks
+- Rate limiting for expensive AI operations
+- Safe error handling
+- Privacy-conscious logging
+- Clear consent for health information
+- Protection against exposing one user's records to another
+
+Clearly label estimated nutritional values and prices.
+
+Avoid definitive medical claims.
+
+## 18. User Experience and Quality
+
+Every visible button must work.
+
+Implement
+
+- Loading states
+- Empty states
+- Error messages
+- Success notifications
+- Form validation
+- Responsive layouts
+- Accessible labels
+- Keyboard navigation
+- Mobile-friendly camera controls
+- Clear verification status indicators
+
+Do not create dead buttons or pages that only look complete.
+
+## 19. Development Workflow
+
+Work in the following order
+
+Phase 1 Inspect the project and establish the design system.
+
+Phase 2 Build the landing page, navigation, authentication UI, and responsive layouts.
+
+Phase 3 Implement the food scanner and OCR-to-analysis workflow.
+
+Phase 4 Build nutrition reports and the product-claim verification engine.
+
+Phase 5 Build product comparisons, healthy alternatives, and charts.
+
+Phase 6 Build the personalized recipe generator, serving calculator, and grocery list.
+
+Phase 7 Build the Premium subscription page and dietitian marketplace.
+
+Phase 8 Integrate available APIs, database storage, authentication, and verification services.
+
+Phase 9 Test critical flows, handle errors, and fix responsive UI issues.
+
+After each phase, run the relevant checks and fix errors before continuing.
+
+## 20. Final Acceptance Criteria
+
+The finished WhatsInit application must allow a user to
+
+1. Open the website and understand its purpose.
+2. Scan a food package using a camera or upload an image.
+3. Review extracted label information.
+4. See a readable nutritional analysis.
+5. Understand product-claim verification results and their evidence.
+6. Check FSSAI licence information through an available official verification method.
+7. Compare suitable food alternatives with available price and nutrition data.
+8. Generate recipes using preferences, budget, and serving size.
+9. Adjust ingredient quantities for different serving counts.
+10. Generate a consolidated grocery list.
+11. Explore Premium benefits.
+12. Browse dietitian profiles and book a consultation when a real booking integration is available.
+13. Save and revisit permitted user history.
+
+Build a polished, working MVP first. Prioritize the food-scanning experience and transparent claim verification, then add recipes, grocery planning, and dietitian features.
+
+Final product identity
+
+WhatsInit — Before You Eat It, Know What's In It.
+
+Build it as a trustworthy, minimalistic, practical food intelligence platform for Indian consumers.

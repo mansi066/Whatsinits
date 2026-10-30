@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-orange: #F58220;
+  --color-soft-orange: #FFAB66;
+  --color-light-peach: #FFF0E3;
+  --color-pale-cream: #FFFAF5;
+  --color-warm-white: #FFFFFF;
+  --color-dark-text: #252525;
+  --color-secondary-text: #77716B;
+  --color-verified-green: #22A447;
+  --color-light-green: #EAF8EE;
+  --color-warning-amber: #F2B544;
+  --color-error-red: #E65A50;
+
+  /* Backward compatibility aliases */
+  --color-primary-green: #F58220;
+  --color-soft-sage: #FFF0E3;
+  --color-warm-bg: #FFFAF5;
+  --color-pure-white: #FFFFFF;
+  --color-dark-charcoal: #252525;
+  --color-muted-gray: #77716B;
+}
+
+body {
+  background-color: #FFFAF5;
+  color: #252525;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Subtle spotlight effect for interactive cards */
+.spotlight-card {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FFFFFF;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 130, 32, 0.22), transparent 70%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(245, 130, 32, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFAF5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD2AC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F58220;
+}

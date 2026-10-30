@@ -1,0 +1,6 @@
+{
+  "name": "WhatsInit",
+  "description": "AI-Powered Food Intelligence & Personalized Nutrition Platform — Before You Eat It, Know What's In It.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
